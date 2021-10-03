@@ -15,6 +15,8 @@ int WINAPI _tWinMain(HINSTANCE This, HINSTANCE Prev, LPTSTR, int mode) {
 	HWND hWnd;
 	MSG msg;
 	WNDCLASS wc;
+	HACCEL hAccel;
+
 	wc.hInstance = This;
 	wc.lpszClassName = WinName;
 	wc.lpfnWndProc = WndProc;
@@ -40,12 +42,16 @@ int WINAPI _tWinMain(HINSTANCE This, HINSTANCE Prev, LPTSTR, int mode) {
 		This,
 		NULL);
 
+	hAccel = LoadAccelerators(This, _T("ACS"));
+
 	ShowWindow(hWnd, mode);
 	UpdateWindow(hWnd);
 
 	while (GetMessage(&msg, NULL, 0, 0)) {
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		if (!TranslateAccelerator(hWnd, hAccel, &msg)) {
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
 	}
 	return msg.wParam;
 }

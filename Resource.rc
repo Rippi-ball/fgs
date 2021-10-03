@@ -5,14 +5,24 @@ MYMENU MENU
 {
 	POPUP "&Изменение размеров фигуры"
 	{
-		MENUITEM "&Увеличить\t",IDM_UPPER
-		MENUITEM "&Уменьшить\t",IDM_REDUCE
+		MENUITEM "&Увеличить\t+",IDM_UPPER
+		MENUITEM "&Уменьшить\t-",IDM_REDUCE
 	}
 	POPUP "&Перемещение фигуры"
 	{
-		MENUITEM "&Вниз\t",IDM_BOTTOM
-		MENUITEM "&Вверх\t",IDM_TOP
-		MENUITEM "&Влево\t",IDM_LEFT
-		MENUITEM "&Вправо\t",IDM_RIGHT
+		MENUITEM "&Вниз\tS",IDM_BOTTOM
+		MENUITEM "&Вверх\tW",IDM_TOP
+		MENUITEM "&Влево\tA",IDM_LEFT
+		MENUITEM "&Вправо\tD",IDM_RIGHT
 }
+}
+
+ACS ACCELERATORS
+{
+	"w", IDM_TOP
+	"s", IDM_BOTTOM
+	"d", IDM_RIGHT
+	"a", IDM_LEFT
+	"+", IDM_UPPER
+	"-", IDM_REDUCE
 }
