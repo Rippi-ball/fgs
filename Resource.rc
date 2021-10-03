@@ -1,0 +1,18 @@
+#include <windows.h>
+#include "menu.h"
+
+MYMENU MENU
+{
+	POPUP "&Изменение размеров фигуры"
+	{
+		MENUITEM "&Увеличить\t",IDM_UPPER
+		MENUITEM "&Уменьшить\t",IDM_REDUCE
+	}
+	POPUP "&Перемещение фигуры"
+	{
+		MENUITEM "&Вниз\t",IDM_BOTTOM
+		MENUITEM "&Вверх\t",IDM_TOP
+		MENUITEM "&Влево\t",IDM_LEFT
+		MENUITEM "&Вправо\t",IDM_RIGHT
+}
+}
